@@ -3,7 +3,7 @@
  ## Features
 
 * Display the increment and decrement logic of the counter 
-* Check the negative lower boundry number functionaliy
+* Check the negative lower boundary number functionality
 * The counter resets to 0 on refreshing the Window
 
  ## Test Cases
