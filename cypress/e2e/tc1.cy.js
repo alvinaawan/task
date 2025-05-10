@@ -1,7 +1,27 @@
 describe('Counter App', () => {
-  it('Counter Sets to 1', () => {
+  it('Verify that the counter is Incremented/Decremented by 1 on pressing the increment or decrement button respectively.', () => {
     cy.visit('http://127.0.0.1:3000/')
+    cy.get('#counter').should('have.text', '0');
+    cy.get('#increment-btn').should('exist');
+    cy.get('#decrement-btn').should('exist');
     cy.get('#increment-btn').click();
     cy.get('#counter').should('have.text', '1');
+   
+
+//Click the increment button multiple times
+   Cypress._.times(3, () => {
+    cy.get('#increment-btn').click();
+})
+
+    cy.get('#counter').should('have.text', '4');
+    
+//Click the decrement button multiple times
+   Cypress._.times(4, () => {
+    cy.get('#decrement-btn').click();
+
+})
+
+  cy.get('#counter').should('have.text', '0');
+
   })
 })
